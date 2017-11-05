@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ProjektiTietokanta.Models.Projektit3>
+
+@{
+    ViewBag.Title = "Hallinnoi";
+}
+
+<div class="createproject">
+    <h2>Hallinnoi</h2>
+    <table class="table table-responsive" id="tableprojects">
+        <thead>
+            <tr>
+                <th>Hallitse</th>
+                <th>Projekti</th>
+                <th>Aloitettu</th>
+                <th>Esimies</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+    <!-- Modify project. Modify employees on on project-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modifyproject">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Muokkaa</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">Projekti nimi</div>
+                        <div class="col-md-6"><input class="form-control" id="addproject_name" /></div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">Projektin esimies</div>
+                        <div class="col-md-6"><input class="form-control" id="addproject_esimies" /></div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">Projektissa mukana</div>
+                        <div class="col-md-6"><input class="form-control" id="addproject_employee" /></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+                    <button type="button" class="btn btn-primary" id="modify">Tallenna</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+ <!-- Claim hours to project per employee -->
+<div class="modal fade" tabindex="-1" role="dialog" id="claimhours">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Muokkaa</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3">Projekti nimi</div>
+                    <div class="col-md-6"><label class="form-control" id="claimhours_name" /></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3">Valitse työntekijä</div>
+                    <div class="col-md-6"><select class="form-control" id="claimhours_employee"></select></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3">Tunnit</div>
+                    <div class="col-md-6">
+                        <select class="form-control" id="claimhours_hours">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+                <button type="button" class="btn btn-primary" id="claim">Tallenna</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
